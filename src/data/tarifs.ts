@@ -52,10 +52,6 @@ export const apercuPrestations = [
     titre: 'Épilation',
     texte: 'Peau lisse grâce aux épilations à la cire, du maillot aux jambes.',
   },
-  {
-    titre: 'Massages',
-    texte: 'Détente au choix — huiles essentielles et soins bio pour un moment rien que pour vous.',
-  },
 ] as const
 
 export const tarifManucure: BlocTarifs = {

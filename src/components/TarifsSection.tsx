@@ -157,7 +157,7 @@ export function TarifsSection() {
           </div>
 
           <p className="mx-auto mt-10 max-w-2xl text-center text-sm text-ink/55">
-            Épilation & massages : prestations sur mesure — nous consulter pour durée et tarif.
+            Épilation : prestations sur mesure — nous consulter pour durée et tarif.
           </p>
 
           <nav

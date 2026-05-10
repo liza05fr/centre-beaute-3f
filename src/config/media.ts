@@ -15,51 +15,51 @@ export type BeautyPhoto = {
 export const media = {
   /** Grande photo + vignette : URL principale + secours si Unsplash est bloqué ou indisponible */
   hero: {
-    main: u('photo-1516975080664-ed2fc6a32937', 1200),
+    main: 'https://i.ibb.co/ds03XJCP/image-viber-2026-05-10-22-15-02-265.jpg',
     mainFallback: p('939836', 1200),
-    mainAlt: 'Institut de beauté — espace manucure et soins',
-    accent: u('photo-1522337360788-8b13dee8a37e', 600),
+    mainAlt: 'Centre de beauté 3F — votre institut',
+    accent: 'https://i.ibb.co/rKDXfDBz/image-viber-2026-05-10-22-11-40-396.jpg',
     accentFallback: p('939836', 600),
-    accentAlt: 'Détail manucure et pose vernis',
+    accentAlt: 'Photo institut Centre de beauté 3F',
   },
   /** Nos univers — visuels alignés avec chaque carte */
   soins: [
     {
-      src: u('photo-1604654894610-df63bc536371', 900),
+      src: 'https://www.centre-europeen-formation.fr/wp-content/uploads/2023/08/nail-art.jpeg',
       fallback: p('939836', 900),
-      alt: 'Manucure et pédicure — pose ongles et soin des pieds',
+      alt: 'Manucure et nail art — pose ongles et créativité',
     },
     {
-      src: u('photo-1560869713-92d9e42246ec', 900),
+      src: 'https://hair-extension.fr/wp-content/uploads/2025/07/gros-plan-sur-une-pose-d-extensions-keratine-tendance-beaute.jpg',
       fallback: p('3065209', 900),
-      alt: 'Extensions cheveux et regard — salon coiffure et beauté',
+      alt: 'Gros plan pose d’extensions kératine, tendance beauté cheveux',
     },
     {
-      src: u('photo-1596178060819-8fddb7036453', 900),
-      fallback: p('4465825', 900),
-      alt: 'Soins des pieds spa et beauté des ongles',
+      src: 'https://gaelleb.com/wp-content/uploads/2025/05/regard-naturel-extension-cil-a-cil.jpg',
+      fallback: p('3065209', 900),
+      alt: 'Regard naturel, extension cil à cil et mise en beauté des yeux',
     },
   ] as const satisfies readonly BeautyPhoto[],
   gallery: [
     {
-      src: u('photo-1544161515-4ab6ce6db874', 800),
-      fallback: p('3771069', 800),
-      alt: 'Ambiance spa, pierres chaudes et détente',
+      src: 'https://coeuroline.fr/wp-content/uploads/2019/09/manucure-mains-et-pieds.jpg',
+      fallback: p('4465825', 800),
+      alt: 'Manucure mains et pieds, pose et soin des ongles',
     },
     {
-      src: u('photo-1515377902963-c13631e70cb7', 800),
+      src: 'https://www.campus-des-ecoles.fr/uploads/2022/07/shutterstock_1080595649-300x200.jpg',
       fallback: p('3997987', 800),
-      alt: 'Ambiance institut : matériel propre, blanc et douceur',
+      alt: 'Ambiance soins, institut de beauté et bien-être',
     },
     {
-      src: u('photo-1632345031435-8727f689505d', 800),
+      src: 'https://m.media-amazon.com/images/I/61oFwo2WkWL._AC_UF1000,1000_QL80_.jpg',
       fallback: p('939836', 800),
-      alt: 'Vernis à ongles, coloris et univers manucure',
+      alt: 'Vernis à ongles, matériel manucure et soin des ongles',
     },
     {
-      src: u('photo-1620916566398-39f1143ab7be', 800),
+      src: 'https://www.murielt.com/wp-content/uploads/2019/01/Extension-de-cils-dernie%CC%80re-version.jpg',
       fallback: p('6621464', 800),
-      alt: 'Univers beauté : produits professionnels et cadre soigné',
+      alt: 'Extensions de cils et mise en beauté du regard',
     },
   ] as const satisfies readonly BeautyPhoto[],
 } as const
