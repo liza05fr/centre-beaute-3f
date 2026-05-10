@@ -20,7 +20,6 @@ const NAV_LINKS = [
   { href: '#tarifs', label: 'Tarifs' },
   { href: '#equipe', label: 'L’équipe' },
   { href: '#rdv', label: 'Rendez-vous' },
-  { href: '#services-plus', label: 'Services +' },
 ] as const
 
 function Header() {
@@ -357,49 +356,6 @@ function GalleryStrip() {
   )
 }
 
-function ServicesPlus() {
-  return (
-    <section id="services-plus" className="scroll-mt-24 border-t border-rose/15 bg-white/80 py-20">
-      <div className="mx-auto max-w-6xl px-4">
-        <header className="mb-12 text-center">
-          <p className="font-script text-3xl text-rosedeep">Pour aller plus loin</p>
-          <h2 className="font-display text-3xl font-semibold text-ink md:text-4xl">
-            Ce que l’on peut brancher ensuite
-          </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-ink/65">
-            Prochaines évolutions possibles pour {SALON_NAME} : SMS automatiques, dossier client et carte de fidélité — cette
-            base est déjà pensée pour une API, une base de données et des envois transactionnels.
-          </p>
-        </header>
-        <div className="grid gap-6 md:grid-cols-3">
-          {[
-            {
-              title: 'SMS automatiques',
-              desc: 'Confirmation, rappels et annulations par SMS selon vos règles.',
-            },
-            {
-              title: 'Dossier client',
-              desc: 'Historique des rendez-vous et paiements pour un suivi professionnel.',
-            },
-            {
-              title: 'Carte de fidélité',
-              desc: 'Points ou tampons en ligne, visible par la cliente sur son compte.',
-            },
-          ].map((item) => (
-            <div
-              key={item.title}
-              className="rounded-2xl border border-dashed border-rose/40 bg-peach/20 p-6 text-center"
-            >
-              <h3 className="font-display text-lg font-semibold text-ink">{item.title}</h3>
-              <p className="mt-2 text-sm text-ink/65">{item.desc}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  )
-}
-
 function Footer() {
   return (
     <footer className="border-t border-rose/20 bg-ink py-12 text-cream">
@@ -467,7 +423,6 @@ export default function App() {
         <GalleryStrip />
         <TarifsSection />
         <BookingSection />
-        <ServicesPlus />
       </main>
       <Footer />
     </>
