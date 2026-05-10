@@ -1,0 +1,10 @@
+# Déploiement Netlify : https://docs.netlify.com/configure-builds/file-based-configuration/
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+# SPA / routes futures : tout renvoie vers index.html
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

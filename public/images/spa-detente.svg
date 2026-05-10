@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-labelledby="t-spa">
+  <title id="t-spa">Ambiance spa et détente</title>
+  <defs>
+    <linearGradient id="sp-bg" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#fceee9"/>
+      <stop offset="50%" stop-color="#fde8e0"/>
+      <stop offset="100%" stop-color="#f5d0d8"/>
+    </linearGradient>
+    <linearGradient id="sp-wave" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#e8a4b8" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#c9788e" stop-opacity="0.35"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#sp-bg)"/>
+  <!-- zen waves -->
+  <path fill="none" stroke="url(#sp-wave)" stroke-width="3" opacity="0.8"
+    d="M0 380 Q200 340 400 380 T800 380"/>
+  <path fill="none" stroke="#e8a4b8" stroke-width="2" opacity="0.45"
+    d="M0 420 Q200 380 400 420 T800 420"/>
+  <path fill="none" stroke="#c9788e" stroke-width="2" opacity="0.35"
+    d="M0 460 Q200 420 400 460 T800 460"/>
+  <!-- candle glow -->
+  <circle cx="400" cy="220" r="48" fill="#fff5f2" opacity="0.85"/>
+  <circle cx="400" cy="230" r="22" fill="#fde8e0" opacity="0.95"/>
+  <rect x="392" y="248" width="16" height="90" rx="4" fill="#e8a4b8" opacity="0.55"/>
+  <!-- stones suggestion -->
+  <ellipse cx="260" cy="520" rx="70" ry="28" fill="#9c847c" opacity="0.15"/>
+  <ellipse cx="540" cy="535" rx="55" ry="22" fill="#9c847c" opacity="0.12"/>
+</svg>

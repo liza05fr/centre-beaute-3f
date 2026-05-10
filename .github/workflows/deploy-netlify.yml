@@ -1,0 +1,47 @@
+# Déploiement automatique : à chaque push sur main/master → build → Netlify (prod).
+#
+# Secrets GitHub du dépôt (Settings → Secrets and variables → Actions) :
+#   NETLIFY_AUTH_TOKEN   → Netlify : User settings → Applications → Personal access tokens
+#   NETLIFY_SITE_ID      → Site Netlify : Site configuration → Site details → Site ID
+#   VITE_WEB3FORMS_ACCESS_KEY (optionnel) → même valeur que ton .env local pour les mails RDV
+#
+# Sans ces secrets, cette workflow échoue au déploiement — c’est normal.
+
+name: Deploy Netlify (production)
+
+on:
+  push:
+    branches: [main, master]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+
+      - name: Install
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+        env:
+          VITE_WEB3FORMS_ACCESS_KEY: ${{ secrets.VITE_WEB3FORMS_ACCESS_KEY }}
+
+      - name: Deploy to Netlify
+        uses: netlify/actions/cli@master
+        with:
+          args: deploy --dir=dist --prod
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}

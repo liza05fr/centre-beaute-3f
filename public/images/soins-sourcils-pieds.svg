@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600" role="img" aria-labelledby="t3">
+  <title id="t3">Sourcils microblading et soins des pieds</title>
+  <defs>
+    <linearGradient id="sp-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fde8e0"/>
+      <stop offset="100%" stop-color="#fdf8f5"/>
+    </linearGradient>
+    <linearGradient id="sp-brow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#9c847c"/>
+      <stop offset="50%" stop-color="#5c4549"/>
+      <stop offset="100%" stop-color="#9c847c"/>
+    </linearGradient>
+  </defs>
+  <rect width="900" height="600" fill="url(#sp-bg)"/>
+  <!-- Sourcil stylisé (microblading poils) -->
+  <g transform="translate(180 180)">
+    <path fill="none" stroke="url(#sp-brow)" stroke-width="3" stroke-linecap="round"
+      d="M40 120 Q120 40 280 55 Q420 70 480 130"/>
+    <path stroke="#7d6568" stroke-width="1.8" stroke-linecap="round" opacity="0.85" fill="none"
+      d="M80 115 L95 88 M110 108 L125 78 M145 95 L158 68 M180 85 L188 58 M215 82 L218 52 M250 88 L248 58 M285 105 L275 78"/>
+  </g>
+  <!-- Pied soin pédicure -->
+  <ellipse cx="620" cy="360" rx="140" ry="85" fill="#fceee9" opacity="0.95"/>
+  <path fill="#f5d0d8" opacity="0.75" d="M500 340c55-25 130-15 195 35 45 35 55 95 35 145l-18 12c-65-40-125-62-212-72l-15-120z"/>
+  <ellipse cx="560" cy="395" rx="16" ry="11" fill="#e8a4b8" stroke="#c9788e" stroke-width="1.5"/>
+  <ellipse cx="615" cy="412" rx="17" ry="11" fill="#e8a4b8" stroke="#c9788e" stroke-width="1.5"/>
+  <ellipse cx="675" cy="405" rx="16" ry="10" fill="#e8a4b8" stroke="#c9788e" stroke-width="1.5"/>
+  <ellipse cx="725" cy="385" rx="14" ry="9" fill="#e8a4b8" stroke="#c9788e" stroke-width="1.5"/>
+  <!-- petite feuille spa -->
+  <path fill="#e8a4b8" opacity="0.35" d="M720 220 Q760 180 800 200 Q770 240 720 250 Q700 235 720 220z"/>
+  <text x="450" y="560" text-anchor="middle" fill="#c9788e" font-family="Georgia,serif" font-size="22" opacity="0.5">Sourcils &amp; pieds</text>
+</svg>
