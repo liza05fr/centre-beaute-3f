@@ -1,8 +1,6 @@
 /**
- * Photos HD : source principale + secours (si Unsplash est bloqué, Pexels prend le relais).
+ * Photos : URLs des fichiers + secours Pexels si une image externe ne charge pas.
  */
-const u = (id: string, w: number) =>
-  `https://images.unsplash.com/${id}?auto=format&fit=crop&w=${w}&q=82`
 const p = (id: string, w: number) =>
   `https://images.pexels.com/photos/${id}/pexels-photo-${id}.jpeg?auto=compress&cs=tinysrgb&w=${w}&dpr=2`
 
