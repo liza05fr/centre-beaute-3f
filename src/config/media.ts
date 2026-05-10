@@ -57,9 +57,9 @@ export const media = {
       alt: 'Institut de beauté et bien-être',
     },
     {
-      src: u('photo-1616394584738-fc6e612e71b1', 800),
-      fallback: p('6530546', 800),
-      alt: 'Soins du visage et mise en beauté',
+      src: u('photo-1620916566398-39f1143ab7be', 800),
+      fallback: p('6621464', 800),
+      alt: 'Univers beauté : produits professionnels et cadre soigné',
     },
   ] as const satisfies readonly BeautyPhoto[],
 } as const
