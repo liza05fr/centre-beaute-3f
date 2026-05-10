@@ -4,7 +4,12 @@ import {
   extensionsCheveux,
   tousLesBlocs,
 } from '../data/tarifs'
-import { SALON_INSTAGRAM, SALON_PHONE_DISPLAY, SALON_PHONE_HREF } from '../config/salon'
+import {
+  SALON_INSTAGRAM_ACCOUNTS,
+  SALON_PHONE_DISPLAY,
+  SALON_PHONE_HREF,
+  instagramProfileUrl,
+} from '../config/salon'
 
 function formatLigne(l: LigneTarif): string {
   if (l.prixLabel) return l.prixLabel
@@ -134,14 +139,21 @@ export function TarifsSection() {
               {SALON_PHONE_DISPLAY}
             </a>
             {' · '}
-            <a
-              href={`https://www.instagram.com/${encodeURIComponent(SALON_INSTAGRAM)}/`}
-              target="_blank"
-              rel="noreferrer"
-              className="font-semibold text-rosedeep underline-offset-2 hover:underline"
-            >
-              @{SALON_INSTAGRAM}
-            </a>
+            <span className="inline-flex flex-wrap items-center justify-center gap-x-1 gap-y-0.5">
+              {SALON_INSTAGRAM_ACCOUNTS.map(({ prenom, handle }, i) => (
+                <span key={handle} className="whitespace-nowrap">
+                  {i > 0 && <span className="text-ink/35"> · </span>}
+                  <a
+                    href={instagramProfileUrl(handle)}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="font-semibold text-rosedeep underline-offset-2 hover:underline"
+                  >
+                    {prenom} @{handle}
+                  </a>
+                </span>
+              ))}
+            </span>
           </p>
 
           <div className="mx-auto mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">

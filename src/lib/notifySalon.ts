@@ -1,6 +1,6 @@
 /** Envoi gratuit vers votre boîte mail via https://web3forms.com (sans backend). */
 
-import { SALON_ADDRESS_ONE_LINE, SALON_INSTAGRAM, SALON_NAME } from '../config/salon'
+import { SALON_ADDRESS_ONE_LINE, SALON_INSTAGRAM_ACCOUNTS, SALON_NAME } from '../config/salon'
 
 const WEB3FORMS_ENDPOINT = 'https://api.web3forms.com/submit'
 
@@ -21,7 +21,8 @@ function buildEmailBody(params: {
   const lines = [
     '══════════════════════════════════════',
     `  NOUVELLE DEMANDE DE RENDEZ-VOUS`,
-    `  ${SALON_NAME} (@${SALON_INSTAGRAM})`,
+    `  ${SALON_NAME}`,
+    `  Instagram : ${SALON_INSTAGRAM_ACCOUNTS.map((a) => `${a.prenom} @${a.handle}`).join(' · ')}`,
     '══════════════════════════════════════',
     '',
     'ADRESSE DU SALON',
@@ -48,7 +49,7 @@ function buildEmailBody(params: {
     '',
     '— — —',
     `Répondez à la cliente pour confirmer ou ajuster le créneau.`,
-    `Demande envoyée depuis le formulaire du site ${SALON_NAME} (@${SALON_INSTAGRAM}).`,
+    `Demande envoyée depuis le formulaire du site ${SALON_NAME} — ${SALON_INSTAGRAM_ACCOUNTS.map((a) => `${a.prenom} @${a.handle}`).join(' · ')}.`,
   ]
   return lines.join('\n')
 }

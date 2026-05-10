@@ -2,11 +2,24 @@
 
 export const SALON_NAME = 'Centre de beauté 3F'
 
-/** Instagram affiché (@la_.beautyroom), sans @ dans la constante */
-export const SALON_INSTAGRAM = 'la_.beautyroom'
+/** Praticiennes / Instagram (handle sans @) */
+export type InstagramPraticienne = { prenom: string; handle: string }
+
+export const SALON_INSTAGRAM_ACCOUNTS: readonly InstagramPraticienne[] = [
+  { prenom: 'Liza', handle: 'la_.beautyroom' },
+  { prenom: 'Elsa', handle: 'elsassnails' },
+  { prenom: 'mimi', handle: 'microblading_saint_louis' },
+] as const
+
+/** Compte principal (e-mails, rétrocompat) */
+export const SALON_INSTAGRAM = SALON_INSTAGRAM_ACCOUNTS[0].handle
 
 /** Alias navigation / badge */
 export const SALON_HANDLE = SALON_INSTAGRAM
+
+export function instagramProfileUrl(handle: string): string {
+  return `https://www.instagram.com/${encodeURIComponent(handle)}/`
+}
 
 export const SALON_TAGLINE = 'Manucure · Pédicure · Microblading'
 

@@ -3,12 +3,13 @@ import { media } from './config/media'
 import {
   SALON_ADDRESS_LINE1,
   SALON_ADDRESS_LINE2,
-  SALON_HANDLE,
+  SALON_INSTAGRAM_ACCOUNTS,
   SALON_MAPS_URL,
   SALON_NAME,
   SALON_PHONE_DISPLAY,
   SALON_PHONE_HREF,
   SALON_TAGLINE,
+  instagramProfileUrl,
 } from './config/salon'
 import { BeautyImage } from './components/BeautyImage'
 import { BookingSection } from './components/BookingSection'
@@ -55,12 +56,6 @@ function Header() {
             <span className="min-w-0">
               <span className="block bg-gradient-to-r from-ink via-ink to-rosedeep bg-clip-text font-display text-[1.15rem] font-semibold leading-tight tracking-tight text-transparent md:text-2xl">
                 {SALON_NAME}
-              </span>
-              <span className="mt-1 inline-flex max-w-full items-center gap-1 rounded-full border border-rose/30 bg-white/75 px-2.5 py-0.5 font-mono text-[10px] font-medium uppercase tracking-[0.14em] text-rosedeep shadow-sm backdrop-blur-md md:text-[11px]">
-                <span className="text-rose/55" aria-hidden>
-                  @
-                </span>
-                <span className="truncate">{SALON_HANDLE}</span>
               </span>
             </span>
           </a>
@@ -127,7 +122,15 @@ function Header() {
         >
           <div className="mb-8 rounded-2xl border border-rose/15 bg-gradient-to-br from-peach/40 to-cream p-4">
             <p className="font-display text-lg font-semibold text-ink">{SALON_NAME}</p>
-            <p className="mt-1 font-mono text-xs tracking-[0.12em] text-rosedeep">@{SALON_HANDLE}</p>
+            <ul className="mt-2 space-y-1 font-mono text-[11px] leading-snug tracking-[0.08em] text-rosedeep">
+              {SALON_INSTAGRAM_ACCOUNTS.map(({ prenom, handle }) => (
+                <li key={handle}>
+                  <a href={instagramProfileUrl(handle)} target="_blank" rel="noreferrer" className="hover:underline">
+                    {prenom} — @{handle}
+                  </a>
+                </li>
+              ))}
+            </ul>
           </div>
           <ul className="flex flex-col gap-1">
             {NAV_LINKS.map(({ href, label }) => (
@@ -159,8 +162,6 @@ function Header() {
 }
 
 function Hero() {
-  const handleDisplay = `@${SALON_HANDLE}`
-
   return (
     <section className="relative overflow-hidden pt-28 pb-16 md:pt-36 md:pb-24">
       <div className="pointer-events-none absolute -left-20 -top-20 h-64 w-64 rounded-full bg-blush/60 blur-3xl" />
@@ -169,14 +170,32 @@ function Hero() {
 
       <div className="relative mx-auto grid max-w-6xl items-center gap-12 px-4 lg:grid-cols-2 lg:gap-16">
         <div>
-          <div className="mb-5">
-            <span className="inline-flex items-center gap-2 rounded-full border border-rose/25 bg-white/75 px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.2em] text-rosedeep shadow-sm backdrop-blur-md">
-              <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-gradient-to-r from-rose to-rosedeep ring-2 ring-rose/25" aria-hidden />
-              {handleDisplay}
-            </span>
-          </div>
           <p className="font-script text-4xl text-rosedeep md:text-5xl">{SALON_TAGLINE}</p>
-          <h1 className="mt-4 font-display text-5xl font-semibold leading-tight tracking-tight text-ink md:text-6xl lg:text-7xl">
+          <div className="mt-5 flex flex-wrap gap-2.5">
+            {SALON_INSTAGRAM_ACCOUNTS.map(({ prenom, handle }) => (
+              <a
+                key={handle}
+                href={instagramProfileUrl(handle)}
+                target="_blank"
+                rel="noreferrer"
+                className="group inline-flex items-center gap-2.5 rounded-full border border-rose/30 bg-gradient-to-r from-white/95 to-peach/25 px-4 py-2.5 text-sm shadow-[0_8px_28px_-12px_rgba(201,120,142,0.35)] ring-1 ring-white/80 transition hover:border-rose/55 hover:shadow-md"
+              >
+                <span
+                  className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-[#fdf4f7] via-rose/90 to-rosedeep text-white shadow-inner ring-2 ring-white/90"
+                  aria-hidden
+                >
+                  <svg className="h-4 w-4 opacity-95" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
+                  </svg>
+                </span>
+                <span className="min-w-0 text-left">
+                  <span className="block font-display text-[15px] font-semibold leading-tight text-ink group-hover:text-rosedeep">{prenom}</span>
+                  <span className="block font-mono text-[11px] leading-tight tracking-wide text-ink/55">@{handle}</span>
+                </span>
+              </a>
+            ))}
+          </div>
+          <h1 className="mt-8 font-display text-5xl font-semibold leading-tight tracking-tight text-ink md:text-6xl lg:text-7xl">
             Votre écrin de douceur
           </h1>
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-ink/75">
@@ -391,7 +410,15 @@ function Footer() {
           </span>
           <div>
             <p className="font-display text-xl font-semibold">{SALON_NAME}</p>
-            <p className="mt-1 font-mono text-xs tracking-[0.14em] text-cream/85">@{SALON_HANDLE}</p>
+            <ul className="mt-2 space-y-1 font-mono text-[11px] tracking-[0.08em] text-cream/90">
+              {SALON_INSTAGRAM_ACCOUNTS.map(({ prenom, handle }) => (
+                <li key={handle}>
+                  <a href={instagramProfileUrl(handle)} target="_blank" rel="noreferrer" className="hover:text-white hover:underline">
+                    {prenom} — @{handle}
+                  </a>
+                </li>
+              ))}
+            </ul>
             <p className="mt-2 text-sm text-cream/65">{SALON_TAGLINE}</p>
           </div>
         </div>
@@ -406,19 +433,20 @@ function Footer() {
             </a>
           </p>
           <p className="mt-4">Réservation en ligne — confirmation par vous après réception du mail.</p>
-          <p className="mt-3 flex flex-wrap items-center justify-center gap-x-4 gap-y-2 md:justify-start">
+          <div className="mt-3 flex flex-col gap-2 text-center sm:flex-row sm:flex-wrap sm:items-start sm:justify-center sm:gap-x-4 md:justify-start md:text-left">
             <a href={SALON_PHONE_HREF} className="text-cream/90 hover:text-white">
               Tél. {SALON_PHONE_DISPLAY}
             </a>
-            <a
-              href={`https://www.instagram.com/${encodeURIComponent(SALON_HANDLE)}/`}
-              target="_blank"
-              rel="noreferrer"
-              className="text-cream/90 hover:text-white"
-            >
-              @{SALON_HANDLE}
-            </a>
-          </p>
+            <ul className="flex flex-col gap-1 text-cream/90">
+              {SALON_INSTAGRAM_ACCOUNTS.map(({ prenom, handle }) => (
+                <li key={handle}>
+                  <a href={instagramProfileUrl(handle)} target="_blank" rel="noreferrer" className="hover:text-white hover:underline">
+                    {prenom} — @{handle}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
         <div className="text-2xl" aria-hidden>
           ♥
