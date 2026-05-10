@@ -47,14 +47,14 @@ export const media = {
       alt: 'Ambiance spa, pierres chaudes et détente',
     },
     {
-      src: u('photo-1570172619644-dfd03ed5d881', 800),
-      fallback: p('3785687', 800),
-      alt: 'Produits beauté et soins professionnels',
+      src: u('photo-1515377902963-c13631e70cb7', 800),
+      fallback: p('3997987', 800),
+      alt: 'Ambiance institut : matériel propre, blanc et douceur',
     },
     {
-      src: u('photo-1487412947147-5cebf100ffc2', 800),
-      fallback: p('4464631', 800),
-      alt: 'Institut de beauté et bien-être',
+      src: u('photo-1632345031435-8727f689505d', 800),
+      fallback: p('939836', 800),
+      alt: 'Vernis à ongles, coloris et univers manucure',
     },
     {
       src: u('photo-1620916566398-39f1143ab7be', 800),
