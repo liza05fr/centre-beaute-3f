@@ -228,13 +228,6 @@ export function BookingSection() {
             encore une réservation fermée :{' '}
             <strong className="font-semibold text-ink/85">le salon vous confirme</strong> (ou propose un autre horaire).
           </p>
-          <p className="mx-auto mt-4 max-w-2xl rounded-2xl border border-rose/20 bg-white/80 px-4 py-3 text-left text-sm leading-relaxed text-ink/75">
-            <strong className="text-ink">Disponibilité des créneaux :</strong> ce site ne bloque pas automatiquement les places.
-            Chaque visiteuse voit les mêmes horaires possibles ; si deux personnes demandent la même plage, vous le voyez dans
-            vos e-mails et vous tranchez (agenda papier, Google Agenda, téléphone). Pour que le site masque tout seul les
-            créneaux pris, il faudrait une base de données ou un outil type Cal.com / logiciel métier — on peut l’ajouter plus
-            tard.
-          </p>
           {import.meta.env.DEV && !hasWeb3Key && (
             <p className="mx-auto mt-4 max-w-xl rounded-2xl border border-amber-200/80 bg-amber-50/90 px-4 py-3 text-left text-sm text-amber-950/90">
               <strong className="font-semibold">Développement :</strong> pour recevoir les demandes dans votre boîte mail, créez{' '}
